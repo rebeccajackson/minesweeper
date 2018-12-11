@@ -63,9 +63,10 @@ var board = {
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
-  for(i = 0; i < board.cells.length; i++){ 
+  console.log(i)
+  for(var i = 0; i < board.cells.length; i++){ 
+    console.log(board.cells[i])
     board.cells.surroundingMines = countSurroundingMines(board.cells[i]);
-    console.log(board.cells[i].surroundingMines)
   }
   lib.initBoard()
 }
@@ -75,7 +76,7 @@ function startGame () {
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
-for(i=0; i < board.cells.length; i++){
+for(var i = 0; i < board.cells.length; i++){
   if(this.isMine === true && this.isMarked === true){
     lib.displayMessage('You win!')
   }
@@ -96,14 +97,13 @@ for(i=0; i < board.cells.length; i++){
 // them, counting the number of times `cell.isMine` is true.
 
 function countSurroundingMines (cell) {
+  var count = 0;
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
   console.log(surrounding);
-  let count = 0;
- /* for(i = 0; i < surrounding.length; i++){*/
-    if(surrounding.isMine === true){
+  for(var i = 0; i < surrounding.length; i++){
+    console.log(i, surrounding[i])
+    if(surrounding[i].isMine == true)
      count++;
-     return count;
-    }
-    console.log(count);
-  
+  }
+  return count;
 }
