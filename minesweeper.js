@@ -77,7 +77,12 @@ function startGame () {
 function checkForWin () {
 for(var i=0; i < board.cells.length; i++){
   if(board.cells.isMine === true && board.cells.isMarked === true){
-    lib.displayMessage('You win!')
+    if(board.cells.hidden !== true){
+      lib.displayMessage('You win!')
+    } else {
+      return
+    }
+    
   }
 }
 
@@ -99,10 +104,9 @@ function countSurroundingMines (cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
   let count = 0;
   for(var i = 0; i < surrounding.length; i++){
-    if(cell.isMine === true){
+    if(surrounding[i].isMine === true){
      count++;
-     console.log(count);
-    }
-    return count;
+    }   
   }
+  return count;
 }
