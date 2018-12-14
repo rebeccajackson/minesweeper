@@ -44,7 +44,7 @@ body {
 }
 
 div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") crimson;
+  background: no-repeat center/60% url("images/shark.png") rgb(154, 220, 236);
 }
 
 div.hidden {
@@ -56,5 +56,22 @@ div.hidden:hover {
 }
 
 div.marked, div.marked:hover {
-  background: no-repeat center/60% url("images/mark.svg") deepskyblue;
+  background: no-repeat center/60% url("images/mark.svg") rgb(255, 115, 0);
 }
+
+.reset, .toggle{
+  padding: 10px;
+  margin: 10px;
+  border: 1px #ccc dotted;
+  border-radius: 10%;
+  background-color: #eee;
+}
+
+.reset:hover{
+  background: #ccc;
+}
+
+.toggle:hover{
+  background: #ccc;
+}
+
